@@ -1,6 +1,6 @@
 # CI/CD Pipeline for Nginx Web Application
 
-This project implements a complete CI/CD pipeline for deploying a Nginx web application using Jenkins, SonarQube, Docker, and Terraform. The project is based on [jenkins-nginx](https://github.com/sys-admn/Install-DevOps-tools-with-Docker.git).
+This project implements a complete CI/CD pipeline for deploying a Nginx web application using Jenkins, SonarQube, Docker, and Terraform. The project is based on [Install-DevOps-tools-with-Docker](https://github.com/sys-admn/Install-DevOps-tools-with-Docker.git).
 
 ## Project Overview
 
