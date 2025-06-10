@@ -85,14 +85,14 @@
     <header>
         <div class="container">
             <h1>Road to DevOps</h1>
-            <p>CI/CD Pipeline with Docker, GitHub Actions, and Terraform</p>
+            <p>CI/CD Pipeline with Jenkins, SonarQube, Docker, and Terraform</p>
         </div>
     </header>
     
     <div class="container">
         <div class="content">
             <h2>Deployment Status: <span id="status-indicator" class="status status-checking">Checking...</span></h2>
-            <p>This page is served by Nginx running in a Docker container, deployed automatically through a CI/CD pipeline.</p>
+            <p>This page is served by Nginx running in a Docker container, deployed automatically through a Jenkins CI/CD pipeline.</p>
             
             <div class="server-info">
                 <p><strong>Server:</strong> <span id="server-name">Checking...</span></p>
@@ -114,20 +114,29 @@
                 </div>
                 <div class="tech-item">
                     <h4>CI/CD</h4>
-                    <p>Pipeline Jenkins</p>
+                    <p>Jenkins Pipeline</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Code Quality</h4>
+                    <p>SonarQube</p>
                 </div>
                 <div class="tech-item">
                     <h4>Infrastructure</h4>
                     <p>AWS & Terraform</p>
+                </div>
+                <div class="tech-item">
+                    <h4>Repository</h4>
+                    <p>GitHub</p>
                 </div>
             </div>
             
             <h3>Deployment Pipeline</h3>
             <p>Code changes pushed to the main branch trigger:</p>
             <ol>
+                <li>Code checkout from GitHub</li>
+                <li>SonarQube code quality analysis</li>
+                <li>Terraform infrastructure provisioning</li>
                 <li>Docker image build</li>
-                <li>Push to DockerHub</li>
-                <li>Terraform infrastructure deployment</li>
                 <li>Container deployment on AWS EC2</li>
             </ol>
         </div>
@@ -135,7 +144,7 @@
     
     <footer>
         <div class="container">
-            <p>DevOps Demo Project - Deployed with ❤️ using GitHub Actions</p>
+            <p>DevOps Demo Project - Deployed with ❤️ using Jenkins Pipeline</p>
         </div>
     </footer>
 
