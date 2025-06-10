@@ -39,17 +39,21 @@ ssh-keyscan -H <PUBLIC-IP-EC2> >> ~/.ssh/known_hosts
 pipeline {
     agent any
     
+
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                git url: 'https://github.com/sys-admn/jenkins-nginx.git', branch: 'main'
             }
         }
         
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('SonarQube') {
-                    sh 'sonar-scanner'
+                script {
+                    def scannerHome = tool 'SonarScanner'
+                    withSonarQubeEnv(credentialsId: 'sonarqube-Token')  {
+                          sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=jenkins-nginx"
+                    }
                 }
             }
         }
